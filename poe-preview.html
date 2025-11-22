@@ -1,0 +1,1005 @@
+<!DOCTYPE html><html lang="zh-HK"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Testing Consultants Limited | 現代試驗顧問有限公司</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary: #1a3b8e; /* Corporate Blue */
+            --primary-dark: #122a66;
+            --accent: #b82b2b;  /* Corporate Red */
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --dark: #2c3e50;
+            --grey: #6c757d;
+            --border: #e9ecef;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --nav-height: 80px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+        }
+
+        body {
+            color: var(--dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 55px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+        
+        .logo-text span:first-child { font-size: 1.05rem; letter-spacing: 0.5px; }
+        .logo-text span:last-child { font-size: 0.95rem; color: var(--dark); }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 1rem;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+
+        .lang-select {
+            padding: 6px 12px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: var(--light);
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: var(--dark);
+            outline: none;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 59, 142, 0.95) 0%, rgba(26, 59, 142, 0.8) 100%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 5% 160px 5%; /* Extra bottom padding for overlapping badges */
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 16px 45px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 20px rgba(184, 43, 43, 0.4);
+            display: inline-block;
+            border: 2px solid var(--accent);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* --- REDESIGNED BADGES SECTION --- */
+        .badges-wrapper {
+            margin-top: -100px; /* Pull up to overlap hero */
+            padding: 0 5%;
+            position: relative;
+            z-index: 10;
+            margin-bottom: 80px;
+        }
+
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .badge-card {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .badge-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            background: #eef2ff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge-title {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .badge-desc {
+            color: var(--grey);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* --- SERVICES SECTION --- */
+        /* Fix for anchor link scrolling offset */
+        section {
+            scroll-margin-top: var(--nav-height);
+        }
+
+        .services-section {
+            padding: 20px 5% 80px;
+            background: var(--white);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Tab Navigation */
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            background: var(--light);
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-flex;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .tab-btn {
+            padding: 12px 30px;
+            background: transparent;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--grey);
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary);
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(26, 59, 142, 0.3);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .content-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .content-text h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .content-text h4 {
+            color: var(--dark);
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .content-text ul {
+            list-style: none;
+        }
+
+        .content-text li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--dark);
+        }
+
+        .content-text li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .content-highlight {
+            background: #f1f4f9;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid var(--accent);
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-section {
+            background: var(--dark);
+            color: var(--white);
+            padding: 80px 5%;
+            margin-top: 80px;
+        }
+
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h2 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: var(--white);
+            position: relative;
+        }
+        
+        .contact-info h2::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            margin-top: 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+
+        .icon-box {
+            background: rgba(255,255,255,0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        .contact-text strong {
+            display: block;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            color: #aaa;
+        }
+
+        .contact-text span, .contact-text a {
+            font-size: 1.1rem;
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .map-container {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background: #444;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: #888;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9rem;
+            border-top: 1px solid #333;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .content-card { grid-template-columns: 1fr; gap: 30px; }
+            .hero h1 { font-size: 2.2rem; }
+            .badges-wrapper { margin-top: -50px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Hidden for simplicity in this demo */
+            .logo-text span:first-child { font-size: 0.9rem; }
+            .logo-text span:last-child { font-size: 0.75rem; }
+            .hero { padding-bottom: 80px; }
+            .badges-wrapper { margin-top: 30px; margin-bottom: 40px; }
+            .contact-wrapper { flex-direction: column; }
+            .tabs-nav { width: 100%; border-radius: 10px; }
+            .tab-btn { width: 100%; text-align: center; border-radius: 8px; margin-bottom: 5px; }
+        }
+    </style>
+<script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.3f7572448765332f3047.js"></script></head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-container">
+                <!-- Logo Image -->
+                <img src="https://www.mtcl.hk/images/logo.png" alt="MTCL Logo" class="logo-img" onerror="this.style.display='none';"> 
+                <div class="logo-text">
+                    <span>Modern Testing Consultants Limited</span>
+                    <span data-i18n="company_name_short">現代試驗顧問有限公司</span>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#" onclick="window.scrollTo(0,0); return false;" data-i18n="nav_home">首頁</a>
+                    <a href="#services" data-i18n="nav_services">服務範圍</a>
+                    <a href="#contact" data-i18n="nav_contact">聯絡我們</a>
+                </div>
+                <select id="lang-switch" class="lang-select" onchange="changeLanguage(this.value)">
+                    <option value="tc" selected="">繁體中文</option>
+                    <option value="sc">简体中文</option>
+                    <option value="en">English</option>
+                    <option value="jp">日本語</option>
+                    <option value="th">ไทย</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1 data-i18n="hero_title">專業建築測試與顧問服務</h1>
+        <p data-i18n="hero_subtitle">HOKLAS 認可實驗室 (171) | ISO 認證 | 屋宇署預先批核顧問</p>
+        <a href="#contact" class="btn-primary" data-i18n="cta_button">立即聯絡我們</a>
+    </header>
+
+    <!-- Redesigned Badges Section -->
+    <div class="badges-wrapper">
+        <div class="badges-grid">
+            <!-- Badge 1 -->
+            <div class="badge-card">
+                <div class="badge-icon">✓</div>
+                <div class="badge-title">HOKLAS 171</div>
+                <div class="badge-desc" data-i18n="badge_accredited">Accredited Laboratory</div>
+            </div>
+            <!-- Badge 2 -->
+            <div class="badge-card">
+                <div class="badge-icon">★</div>
+                <div class="badge-title">ISO 17025</div>
+                <div class="badge-desc" data-i18n="badge_certified">Certified Standard</div>
+            </div>
+            <!-- Badge 3 -->
+            <div class="badge-card">
+                <div class="badge-icon">⚙</div>
+                <div class="badge-title">ISO 9001</div>
+                <div class="badge-desc" data-i18n="badge_quality">Quality Management</div>
+            </div>
+            <!-- Badge 4 -->
+            <div class="badge-card">
+                <div class="badge-icon">🏛</div>
+                <div class="badge-title" data-i18n="badge_bd_title">BD Approved</div>
+                <div class="badge-desc" data-i18n="badge_bd_desc">Pre-qualified Consultant</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Consolidated Services Section -->
+    <section id="services" class="services-section">
+        <div class="section-header">
+            <h2 data-i18n="services_title">我們的專業服務</h2>
+            <p data-i18n="services_subtitle">點擊下方選項查看詳細測試技術資訊</p>
+        </div>
+
+        <!-- Tab Buttons -->
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="openTab('ndt')" data-i18n="tab_ndt">非破壞性測試發展</button>
+            <button class="tab-btn" onclick="openTab('infrared')" data-i18n="tab_infrared">紅外線測試及分析</button>
+            <button class="tab-btn" onclick="openTab('microwave')" data-i18n="tab_microwave">微波混凝土測試</button>
+        </div>
+
+        <!-- Tab 1: NDT Overview -->
+        <div id="ndt" class="tab-content active">
+            <div class="content-card">
+                <div class="content-text">
+                    <h3 data-i18n="ndt_head">非破壞性測試 (NDT) 的發展與趨勢</h3>
+                    <p data-i18n="ndt_intro">隨著樓宇老化及強制驗樓計劃的實施，市場對非破壞性測試的需求日益增加。其費用相對較低，且能有效評估結構狀況。</p>
+                    
+                    <h4 data-i18n="ndt_sub1">市場趨勢</h4>
+                    <p data-i18n="ndt_desc1">未來發展趨向規範化。例如，使用配備紅外線鏡頭的小型無人機已納入 TM1 及 TM4 標準，能安全處理高樓檢測並保持最佳拍攝角度。</p>
+                </div>
+                <div class="content-highlight">
+                    <h4 data-i18n="ndt_sub2">測試的不確定性管理</h4>
+                    <p data-i18n="ndt_desc2">為減低測試的不確定性，我們嚴格執行：</p>
+                    <ul>
+                        <li data-i18n="ndt_pt1">嚴格遵守法規與測試程序</li>
+                        <li data-i18n="ndt_pt2">精準的儀器監察與校正</li>
+                        <li data-i18n="ndt_pt3">操作人員的專業資格認證</li>
+                        <li data-i18n="ndt_pt4">參與 HOKLAS 實驗所認可計劃</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Infrared -->
+        <div id="infrared" class="tab-content">
+            <div class="content-card">
+                <div class="content-text">
+                    <h3 data-i18n="ir_head">紅外線熱成像檢測</h3>
+                    <p data-i18n="ir_intro">廣泛應用於室內漏水測試及室外大廈外牆結構損壞檢定。符合 HKCI TM1 (2022) 及 TM4 (2024) 標準。</p>
+                    
+                    <h4 data-i18n="ir_sub1">操作人員資格</h4>
+                    <ul>
+                        <li data-i18n="ir_qual1">持有建造業安全訓練証明書 (平安咭)</li>
+                        <li data-i18n="ir_qual2">ASNT SNT-TC-1A 第1級紅外線證書</li>
+                        <li data-i18n="ir_qual3">完成210小時拍攝相關工作時數</li>
+                        <li data-i18n="ir_qual4">註冊進階小型無人機遙控駕駛員 (航拍適用)</li>
+                    </ul>
+                </div>
+                <div class="content-highlight">
+                    <h4 data-i18n="ir_sub2">分析人員資格</h4>
+                    <ul>
+                        <li data-i18n="ir_an1">熟識建築物缺憾成因</li>
+                        <li data-i18n="ir_an2">ASNT SNT-TC-1A 第2級紅外線證書</li>
+                        <li data-i18n="ir_an3">完成1260小時分析相關工作時數</li>
+                        <li data-i18n="ir_an4">符合 ASMT D4788、TM1 及 TM4 規格培訓</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Microwave -->
+        <div id="microwave" class="tab-content">
+            <div class="content-card">
+                <div class="content-text">
+                    <h3 data-i18n="mw_head">微波混凝土斷層濕度測試</h3>
+                    <p data-i18n="mw_intro">利用水份子對微波的反應，精準評估混凝土內部不同深度的濕度分佈，有效找出滲水源頭。</p>
+                    
+                    <h4 data-i18n="mw_sub1">專業設備</h4>
+                    <p data-i18n="mw_equip">實驗室自置16部德國生產 MOIST 350 主機及感應器 (MOIST-PM, R2M, DM)。每3年進行一次全面調試 (Calibration)。</p>
+                </div>
+                <div class="content-highlight">
+                    <h4 data-i18n="mw_sub2">技術人員要求</h4>
+                    <ul>
+                        <li data-i18n="mw_req1">學歷：土木/建築測量高級文憑或以上</li>
+                        <li data-i18n="mw_req2">操作人員：具備60小時操作儀器經驗</li>
+                        <li data-i18n="mw_req3">分析人員：具備50個應用個案結果分析經驗</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2 data-i18n="contact_title">聯絡我們</h2>
+                
+                <div class="contact-item">
+                    <div class="icon-box">📍</div>
+                    <div class="contact-text">
+                        <strong data-i18n="addr_label">地址</strong>
+                        <span data-i18n="addr_text">九龍荔枝角長義街10號昌隆工業大廈2樓A1室</span>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon-box">📞</div>
+                    <div class="contact-text">
+                        <strong data-i18n="phone_label">電話</strong>
+                        <a href="tel:31716823">3171 6823</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon-box">📠</div>
+                    <div class="contact-text">
+                        <strong data-i18n="fax_label">傳真</strong>
+                        <span>3171 6861</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simple Map Placeholder -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.598655783425!2d114.1463!3d22.3375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cc6665015%3A0x44610a3d8290281f!2sCheung%20Lung%20Industrial%20Building!5e0!3m2!1sen!2shk!4v1620000000000!5m2!1sen!2shk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Modern Testing Consultants Limited. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Tab Switching Logic
+        function openTab(tabName) {
+            // Hide all content
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
+            
+            // Deactivate all buttons
+            var buttons = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+
+            // Show specific content and activate button
+            document.getElementById(tabName).classList.add("active");
+            
+            // Find the button that calls this function
+            var clickedBtn = document.querySelector(`button[onclick="openTab('${tabName}')"]`);
+            if(clickedBtn) clickedBtn.classList.add("active");
+        }
+
+        // Translation Data
+        const translations = {
+            tc: {
+                company_name_short: "現代試驗顧問有限公司",
+                nav_home: "首頁",
+                nav_services: "服務範圍",
+                nav_contact: "聯絡我們",
+                hero_title: "專業建築測試與顧問服務",
+                hero_subtitle: "HOKLAS 認可實驗室 (171) | ISO 認證 | 屋宇署預先批核顧問",
+                cta_button: "立即聯絡我們",
+                badge_accredited: "認可實驗室",
+                badge_certified: "認證標準",
+                badge_quality: "品質管理",
+                badge_bd_title: "屋宇署批核",
+                badge_bd_desc: "預先批核顧問",
+                services_title: "我們的專業服務",
+                services_subtitle: "點擊下方選項查看詳細測試技術資訊",
+                tab_ndt: "非破壞性測試發展",
+                tab_infrared: "紅外線測試及分析",
+                tab_microwave: "微波混凝土測試",
+                // NDT Tab
+                ndt_head: "非破壞性測試 (NDT) 的發展與趨勢",
+                ndt_intro: "隨著樓宇老化及強制驗樓計劃的實施，市場對非破壞性測試的需求日益增加。其費用相對較低，且能有效評估結構狀況。",
+                ndt_sub1: "市場趨勢",
+                ndt_desc1: "未來發展趨向規範化。例如，使用配備紅外線鏡頭的小型無人機已納入 TM1 及 TM4 標準，能安全處理高樓檢測並保持最佳拍攝角度。",
+                ndt_sub2: "測試的不確定性管理",
+                ndt_desc2: "為減低測試的不確定性，我們嚴格執行：",
+                ndt_pt1: "嚴格遵守法規與測試程序",
+                ndt_pt2: "精準的儀器監察與校正",
+                ndt_pt3: "操作人員的專業資格認證",
+                ndt_pt4: "參與 HOKLAS 實驗所認可計劃",
+                // Infrared Tab
+                ir_head: "紅外線熱成像檢測",
+                ir_intro: "廣泛應用於室內漏水測試及室外大廈外牆結構損壞檢定。符合 HKCI TM1 (2022) 及 TM4 (2024) 標準。",
+                ir_sub1: "操作人員資格",
+                ir_qual1: "持有建造業安全訓練証明書 (平安咭)",
+                ir_qual2: "ASNT SNT-TC-1A 第1級紅外線證書",
+                ir_qual3: "完成210小時拍攝相關工作時數",
+                ir_qual4: "註冊進階小型無人機遙控駕駛員 (航拍適用)",
+                ir_sub2: "分析人員資格",
+                ir_an1: "熟識建築物缺憾成因",
+                ir_an2: "ASNT SNT-TC-1A 第2級紅外線證書",
+                ir_an3: "完成1260小時分析相關工作時數",
+                ir_an4: "符合 ASMT D4788、TM1 及 TM4 規格培訓",
+                // Microwave Tab
+                mw_head: "微波混凝土斷層濕度測試",
+                mw_intro: "利用水份子對微波的反應，精準評估混凝土內部不同深度的濕度分佈，有效找出滲水源頭。",
+                mw_sub1: "專業設備",
+                mw_equip: "實驗室自置16部德國生產 MOIST 350 主機及感應器 (MOIST-PM, R2M, DM)。每3年進行一次全面調試 (Calibration)。",
+                mw_sub2: "技術人員要求",
+                mw_req1: "學歷：土木/建築測量高級文憑或以上",
+                mw_req2: "操作人員：具備60小時操作儀器經驗",
+                mw_req3: "分析人員：具備50個應用個案結果分析經驗",
+                // Contact
+                contact_title: "聯絡我們",
+                addr_label: "地址",
+                addr_text: "九龍荔枝角長義街10號昌隆工業大廈2樓A1室",
+                phone_label: "電話",
+                fax_label: "傳真"
+            },
+            sc: {
+                company_name_short: "现代试验顾问有限公司",
+                nav_home: "首页",
+                nav_services: "服务范围",
+                nav_contact: "联络我们",
+                hero_title: "专业建筑测试与顾问服务",
+                hero_subtitle: "HOKLAS 认可实验室 (171) | ISO 认证 | 屋宇署预先批核顾问",
+                cta_button: "立即联络我们",
+                badge_accredited: "认可实验室",
+                badge_certified: "认证标准",
+                badge_quality: "品质管理",
+                badge_bd_title: "屋宇署批核",
+                badge_bd_desc: "预先批核顾问",
+                services_title: "我们的专业服务",
+                services_subtitle: "点击下方选项查看详细测试技术资讯",
+                tab_ndt: "非破坏性测试发展",
+                tab_infrared: "红外线测试及分析",
+                tab_microwave: "微波混凝土测试",
+                ndt_head: "非破坏性测试 (NDT) 的发展与趋势",
+                ndt_intro: "随着楼宇老化及强制验楼计划的实施，市场对非破坏性测试的需求日益增加。其费用相对较低，且能有效评估结构状况。",
+                ndt_sub1: "市场趋势",
+                ndt_desc1: "未来发展趋向规范化。例如，使用配备红外线镜头的小型无人机已纳入 TM1 及 TM4 标准，能安全处理高楼检测并保持最佳拍摄角度。",
+                ndt_sub2: "测试的不确定性管理",
+                ndt_desc2: "为减低测试的不确定性，我们严格执行：",
+                ndt_pt1: "严格遵守法规与测试程序",
+                ndt_pt2: "精准的仪器监察与校正",
+                ndt_pt3: "操作人员的专业资格认证",
+                ndt_pt4: "参与 HOKLAS 实验室认可计划",
+                ir_head: "红外线热成像检测",
+                ir_intro: "广泛应用于室内漏水测试及室外大厦外墙结构损坏检定。符合 HKCI TM1 (2022) 及 TM4 (2024) 标准。",
+                ir_sub1: "操作人员资格",
+                ir_qual1: "持有建造业安全训练证明书 (平安卡)",
+                ir_qual2: "ASNT SNT-TC-1A 第1级红外线证书",
+                ir_qual3: "完成210小时拍摄相关工作时数",
+                ir_qual4: "注册进阶小型无人机遥控驾驶员 (航拍适用)",
+                ir_sub2: "分析人员资格",
+                ir_an1: "熟识建筑物缺憾成因",
+                ir_an2: "ASNT SNT-TC-1A 第2级红外线证书",
+                ir_an3: "完成1260小时分析相关工作时数",
+                ir_an4: "符合 ASMT D4788、TM1 及 TM4 规格培训",
+                mw_head: "微波混凝土断层湿度测试",
+                mw_intro: "利用水分子对微波的反应，精准评估混凝土内部不同深度的湿度分布，有效找出渗水源头。",
+                mw_sub1: "专业设备",
+                mw_equip: "实验室自置16部德国生产 MOIST 350 主机及感应器 (MOIST-PM, R2M, DM)。每3年进行一次全面调试 (Calibration)。",
+                mw_sub2: "技术人员要求",
+                mw_req1: "学历：土木/建筑测量高级文凭或以上",
+                mw_req2: "操作人员：具备60小时操作仪器经验",
+                mw_req3: "分析人员：具备50个应用个案结果分析经验",
+                contact_title: "联络我们",
+                addr_label: "地址",
+                addr_text: "九龙荔枝角长义街10号昌隆工业大厦2楼A1室",
+                phone_label: "电话",
+                fax_label: "传真"
+            },
+            en: {
+                company_name_short: "Modern Testing Consultants Ltd.",
+                nav_home: "Home",
+                nav_services: "Services",
+                nav_contact: "Contact Us",
+                hero_title: "Professional Building Testing & Consultancy",
+                hero_subtitle: "HOKLAS Accredited Lab (171) | ISO Certified | BD Pre-qualified",
+                cta_button: "Contact Us Now",
+                badge_accredited: "Accredited Lab",
+                badge_certified: "Certified Standard",
+                badge_quality: "Quality Mgmt",
+                badge_bd_title: "BD Approved",
+                badge_bd_desc: "Pre-qualified Consultant",
+                services_title: "Our Professional Services",
+                services_subtitle: "Click the tabs below for detailed technical specifications",
+                tab_ndt: "NDT Development",
+                tab_infrared: "Infrared Thermography",
+                tab_microwave: "Microwave Testing",
+                ndt_head: "Development & Trends in NDT",
+                ndt_intro: "With aging buildings and mandatory inspection schemes, demand for Non-Destructive Testing (NDT) is rising due to its cost-effectiveness and structural assessment capabilities.",
+                ndt_sub1: "Market Trends",
+                ndt_desc1: "The future is standardization. Drones with infrared cameras are now included in TM1 & TM4 standards, allowing safe high-rise inspections at optimal angles.",
+                ndt_sub2: "Managing Uncertainty",
+                ndt_desc2: "To minimize testing uncertainty, we strictly enforce:",
+                ndt_pt1: "Adherence to regulations and procedures",
+                ndt_pt2: "Precise equipment monitoring & calibration",
+                ndt_pt3: "Professional qualification of operators",
+                ndt_pt4: "Participation in HOKLAS accreditation",
+                ir_head: "Infrared Thermography",
+                ir_intro: "Used for indoor water leakage and external wall defect detection. Compliant with HKCI TM1 (2022) & TM4 (2024).",
+                ir_sub1: "Operator Qualifications",
+                ir_qual1: "Construction Industry Safety Training Certificate (Green Card)",
+                ir_qual2: "ASNT SNT-TC-1A Level 1 Infrared Certificate",
+                ir_qual3: "Completed 210 hours of related shooting experience",
+                ir_qual4: "Registered Advanced Small UAS Pilot (for drones)",
+                ir_sub2: "Analyst Qualifications",
+                ir_an1: "Knowledge of building defect causes",
+                ir_an2: "ASNT SNT-TC-1A Level 2 Infrared Certificate",
+                ir_an3: "Completed 1260 hours of analysis experience",
+                ir_an4: "Training in ASMT D4788, TM1 & TM4 standards",
+                mw_head: "Microwave Concrete Moisture Testing",
+                mw_intro: "Uses microwave reaction to water molecules to assess moisture distribution at various depths, effectively identifying leak sources.",
+                mw_sub1: "Professional Equipment",
+                mw_equip: "We own 16 German MOIST 350 units & sensors (MOIST-PM, R2M, DM). Full calibration performed every 3 years.",
+                mw_sub2: "Personnel Requirements",
+                mw_req1: "Education: Higher Diploma in Civil/Building Surveying or above",
+                mw_req2: "Operator: 60 hours of instrument operation experience",
+                mw_req3: "Analyst: Experience analyzing 50 application cases",
+                contact_title: "Contact Us",
+                addr_label: "Address",
+                addr_text: "Flat A1, 2/F, Cheung Lung Ind. Bldg, 10 Cheung Yee St, Lai Chi Kok, Kowloon",
+                phone_label: "Tel",
+                fax_label: "Fax"
+            },
+            jp: {
+                company_name_short: "現代試験顧問有限公司",
+                nav_home: "ホーム",
+                nav_services: "サービス",
+                nav_contact: "お問い合わせ",
+                hero_title: "建築検査およびコンサルティング",
+                hero_subtitle: "HOKLAS認定ラボ (171) | ISO認証 | 屋宇署事前承認",
+                cta_button: "お問い合わせ",
+                badge_accredited: "認定ラボ",
+                badge_certified: "認証基準",
+                badge_quality: "品質管理",
+                badge_bd_title: "政府承認",
+                badge_bd_desc: "事前承認コンサルタント",
+                services_title: "当社の専門サービス",
+                services_subtitle: "詳細な技術仕様については、以下のタブをクリックしてください",
+                tab_ndt: "NDTの発展",
+                tab_infrared: "赤外線サーモグラフィ",
+                tab_microwave: "マイクロ波コンクリート試験",
+                ndt_head: "非破壊検査 (NDT) の発展と傾向",
+                ndt_intro: "建物の老朽化と強制検査制度により、費用対効果が高く構造評価が可能な非破壊検査の需要が高まっています。",
+                ndt_sub1: "市場の傾向",
+                ndt_desc1: "将来は標準化が進みます。赤外線カメラ搭載ドローンはTM1およびTM4規格に含まれ、高層ビルの安全な検査が可能です。",
+                ndt_sub2: "不確実性の管理",
+                ndt_desc2: "検査の不確実性を最小限に抑えるため、以下を徹底しています：",
+                ndt_pt1: "規制と手順の厳守",
+                ndt_pt2: "精密な機器監視と校正",
+                ndt_pt3: "オペレーターの専門資格認定",
+                ndt_pt4: "HOKLAS認定プログラムへの参加",
+                ir_head: "赤外線サーモグラフィ検査",
+                ir_intro: "屋内漏水および外壁欠陥の検出に使用。HKCI TM1 (2022) および TM4 (2024) に準拠。",
+                ir_sub1: "オペレーター資格",
+                ir_qual1: "建設業安全訓練証明書（グリーンカード）",
+                ir_qual2: "ASNT SNT-TC-1A レベル1 赤外線資格",
+                ir_qual3: "210時間以上の撮影実務経験",
+                ir_qual4: "登録上級小型無人機パイロット（ドローン用）",
+                ir_sub2: "分析者資格",
+                ir_an1: "建物欠陥の原因に関する知識",
+                ir_an2: "ASNT SNT-TC-1A レベル2 赤外線資格",
+                ir_an3: "1260時間以上の分析実務経験",
+                ir_an4: "ASMT D4788、TM1、TM4規格のトレーニング修了",
+                mw_head: "マイクロ波コンクリート水分試験",
+                mw_intro: "水分子へのマイクロ波反応を利用し、様々な深さの水分分布を評価して漏水源を特定します。",
+                mw_sub1: "専門機器",
+                mw_equip: "ドイツ製MOIST 350ユニットおよびセンサー（MOIST-PM、R2M、DM）を16台所有。3年ごとに完全校正を実施。",
+                mw_sub2: "技術者要件",
+                mw_req1: "学歴：土木/建築測量の高等免状以上",
+                mw_req2: "オペレーター：60時間の機器操作経験",
+                mw_req3: "分析者：50件の適用事例分析経験",
+                contact_title: "お問い合わせ",
+                addr_label: "住所",
+                addr_text: "九龍荔枝角長義街10號昌隆工業大廈2樓A1室",
+                phone_label: "電話",
+                fax_label: "ファックス"
+            },
+            th: {
+                company_name_short: "Modern Testing Consultants Ltd.",
+                nav_home: "หน้าแรก",
+                nav_services: "บริการของเรา",
+                nav_contact: "ติดต่อเรา",
+                hero_title: "บริการทดสอบอาคารและที่ปรึกษา",
+                hero_subtitle: "ห้องปฏิบัติการรับรอง HOKLAS (171) | มาตรฐาน ISO | ที่ปรึกษาผ่านการคัดเลือก",
+                cta_button: "ติดต่อเราทันที",
+                badge_accredited: "ห้องปฏิบัติการรับรอง",
+                badge_certified: "มาตรฐานรับรอง",
+                badge_quality: "การจัดการคุณภาพ",
+                badge_bd_title: "รับรองโดย BD",
+                badge_bd_desc: "ที่ปรึกษาผ่านการคัดเลือก",
+                services_title: "บริการระดับมืออาชีพของเรา",
+                services_subtitle: "คลิกแท็บด้านล่างเพื่อดูข้อมูลทางเทคนิคโดยละเอียด",
+                tab_ndt: "การพัฒนา NDT",
+                tab_infrared: "การถ่ายภาพความร้อน",
+                tab_microwave: "การทดสอบไมโครเวฟ",
+                ndt_head: "การพัฒนาและแนวโน้มของ NDT",
+                ndt_intro: "ด้วยอาคารที่เก่าลงและโครงการตรวจสอบบังคับ ความต้องการการทดสอบแบบไม่ทำลาย (NDT) จึงเพิ่มขึ้นเนื่องจากความคุ้มค่า",
+                ndt_sub1: "แนวโน้มตลาด",
+                ndt_desc1: "อนาคตคือมาตรฐาน โดรนพร้อมกล้องอินฟราเรดรวมอยู่ในมาตรฐาน TM1 & TM4 ช่วยให้ตรวจสอบตึกสูงได้อย่างปลอดภัย",
+                ndt_sub2: "การจัดการความไม่แน่นอน",
+                ndt_desc2: "เพื่อลดความไม่แน่นอนในการทดสอบ เราบังคับใช้อย่างเคร่งครัด:",
+                ndt_pt1: "การปฏิบัติตามกฎระเบียบและขั้นตอน",
+                ndt_pt2: "การตรวจสอบและสอบเทียบอุปกรณ์ที่แม่นยำ",
+                ndt_pt3: "การรับรองคุณสมบัติทางวิชาชีพของผู้ปฏิบัติงาน",
+                ndt_pt4: "การเข้าร่วมในการรับรอง HOKLAS",
+                ir_head: "การตรวจจับความร้อนด้วยอินฟราเรด",
+                ir_intro: "ใช้สำหรับตรวจสอบการรั่วซึมภายในและข้อบกพร่องผนังภายนอก ตามมาตรฐาน HKCI TM1 (2022) & TM4 (2024)",
+                ir_sub1: "คุณสมบัติผู้ปฏิบัติงาน",
+                ir_qual1: "ใบรับรองการฝึกอบรมความปลอดภัยอุตสาหกรรมก่อสร้าง",
+                ir_qual2: "ใบรับรองอินฟราเรด ASNT SNT-TC-1A ระดับ 1",
+                ir_qual3: "ประสบการณ์การถ่ายภาพที่เกี่ยวข้อง 210 ชั่วโมง",
+                ir_qual4: "นักบิน UAS ขนาดเล็กขั้นสูงที่ลงทะเบียน (สำหรับโดรน)",
+                ir_sub2: "คุณสมบัตินักวิเคราะห์",
+                ir_an1: "ความรู้เกี่ยวกับสาเหตุข้อบกพร่องของอาคาร",
+                ir_an2: "ใบรับรองอินฟราเรด ASNT SNT-TC-1A ระดับ 2",
+                ir_an3: "ประสบการณ์การวิเคราะห์ 1260 ชั่วโมง",
+                ir_an4: "การฝึกอบรมมาตรฐาน ASMT D4788, TM1 & TM4",
+                mw_head: "การทดสอบความชื้นคอนกรีตด้วยไมโครเวฟ",
+                mw_intro: "ใช้ปฏิกิริยาไมโครเวฟต่อโมเลกุลน้ำเพื่อประเมินการกระจายความชื้นที่ความลึกต่างๆ ระบุแหล่งที่มาของการรั่วไหลได้อย่างมีประสิทธิภาพ",
+                mw_sub1: "อุปกรณ์มืออาชีพ",
+                mw_equip: "เรามีเครื่อง MOIST 350 จากเยอรมนี 16 เครื่องและเซ็นเซอร์ (MOIST-PM, R2M, DM) สอบเทียบเต็มรูปแบบทุก 3 ปี",
+                mw_sub2: "ข้อกำหนดบุคลากร",
+                mw_req1: "การศึกษา: อนุปริญญาขั้นสูงด้านโยธา/การสำรวจอาคาร หรือสูงกว่า",
+                mw_req2: "ผู้ปฏิบัติงาน: ประสบการณ์การใช้งานเครื่องมือ 60 ชั่วโมง",
+                mw_req3: "นักวิเคราะห์: ประสบการณ์วิเคราะห์กรณีศึกษา 50 กรณี",
+                contact_title: "ติดต่อเรา",
+                addr_label: "ที่อยู่",
+                addr_text: "Flat A1, 2/F, Cheung Lung Ind. Bldg, 10 Cheung Yee St, Lai Chi Kok, Kowloon",
+                phone_label: "โทร",
+                fax_label: "แฟกซ์"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang === 'tc' ? 'zh-HK' : 
+                                          lang === 'sc' ? 'zh-CN' : 
+                                          lang === 'jp' ? 'ja' : 
+                                          lang === 'th' ? 'th' : 'en';
+        }
+    </script>
+
+
+</body></html>
